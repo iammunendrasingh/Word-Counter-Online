@@ -204,7 +204,7 @@ function updateKeywordDensity() {
 
     if (keywords.length > 0) {
         keywords.forEach((keyword, index) => {
-            const occurrences = text.split(new RegExp(`\b${keyword}\b`, "gi")).length - 1;
+            const occurrences = text.split(new RegExp(`\\b${keyword}\\b`, "gi")).length - 1;
             const density = totalWords > 0 ? ((occurrences / totalWords) * 100).toFixed(2) : 0;
             if (index === 0) {
                 mainKeywordDensityDisplay.innerHTML = "";

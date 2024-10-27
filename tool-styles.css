@@ -291,4 +291,6 @@ button:hover {
 .red-density {
     background-color: #f44336;
     color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
 }
