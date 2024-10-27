@@ -1,0 +1,317 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f1e5;
+    color: #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 90%;
+    margin: 4em 0;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #0b5345;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 0;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100px; 
+    box-sizing: border-box;
+}
+
+.grippie {
+    background: #eee url(grippie.webp) no-repeat scroll center 2px;
+    border: 1px solid #ddd;
+    border-width: 0 1px 1px;
+    cursor: s-resize;
+    height: 9px;
+    overflow: hidden;
+}
+
+.save-indicator {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.save-status {
+    position: relative;
+    font-size: 14px;
+    color: #4caf50;
+    margin-left: 20px;
+}
+
+.save-status::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -17px;
+    width: 8px;
+    height: 8px;
+    background-color: #4caf50; /* Green color */
+    border-radius: 50%;
+    transform: translateY(-50%);
+    animation: ripple-save 1.5s infinite ease-out;
+}
+
+@keyframes ripple-save {
+    0% {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50%) scale(3);
+        opacity: 0;
+    }
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #0b5345;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    background-color: #2e4375;
+}
+
+.keyword-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.keyword-input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.keyword-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.keyword-item {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.keyword-item .remove-keyword {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #ff0000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.statistics-container {
+    text-align: center;
+    margin: 5em 0 4em 0;
+}
+.live-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #4caf50; /* Green color */
+    border-radius: 50%;
+    position: relative;
+    margin-left: 15px;
+}
+
+.live-indicator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(76, 175, 80, 0.4); /* Green color with opacity */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    animation: ripple 1.5s infinite ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+.statistics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.stat-item {
+    flex: 1 1 150px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.density-statistics {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.density-statistics h2 {
+    font-size: 20px;
+    color: #0b5345;
+    display: inline;
+}
+
+.keyword-density-info {
+    position: relative;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+.keyword-density-info:hover::after {
+    content: "While there's no set keyword density that's optimal for all pages, many SEO professionals recommend a keyword density of 1–2%. This means that you should include your target keyword about one to two times per 100 words of content.";
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -125px;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.keyword-density-info::after {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+.info-text {
+    visibility: hidden;
+    opacity: 0;
+    width: 250px;
+    background-color: #ffffff;
+    color: #2e2e2e;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -125px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+
+.info-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.keyword-density {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyword-density div {
+    margin: 5px 0;
+    font-size: 16px;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.green-density {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.orange-density {
+    background-color: #ff9800;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.gray-density {
+    background-color: #9e9e9e;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.red-density {
+    background-color: #f44336;
+    color: #ffffff;
+}

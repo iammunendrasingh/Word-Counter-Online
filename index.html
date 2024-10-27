@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter Online - Count Word and Keyword Density</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Word Counter Online - Count Word and Keyword Density</h1>
+        <h2 id="wordCharacterSummary"style="text-align: center;"">0 words, 0 characters</h2>
+        <div class="controls">
+            <button onclick="copyText()" title="Copy the text to the clipboard"><i class="fas fa-copy"></i> Copy</button>
+            <button onclick="clearText()" title="Clear all text in the box"><i class="fas fa-trash-alt"></i> Clear</button>
+            <button onclick="toSentenceCase()" title="Convert the text to sentence case"><i class="fas fa-text-height"></i> Sentence Case</button>
+            <button onclick="toUpperCase()" title="Convert the text to uppercase"><i class="fas fa-font"></i> Uppercase</button>
+            <button onclick="toLowerCase()" title="Convert the text to lowercase"><i class="fas fa-text-height"></i> Lowercase</button>
+            <button onclick="capitalizeWords()" title="Capitalize the first letter of each word"><i class="fas fa-bold"></i> Capitalize</button>
+            <button onclick="undo()" title="Undo the last change"><i class="fas fa-undo"></i> Undo</button>
+            <button onclick="redo()" title="Redo the last undone change"><i class="fas fa-redo"></i> Redo</button>
+            <button onclick="saveText()" title="Save the text to a file"><i class="fas fa-save"></i> Save File</button>            
+            <div class="save-indicator">
+                <span class="save-status">Auto-Saves Locally.</span>
+            </div>
+        </div>
+        
+        
+        <textarea id="textArea" placeholder="Start typing, or copy and paste your document here..." class="form-control table-data finalResult textarea_revision processed" style="resize: none; overflow: hidden auto; height: 243px; min-height: 0px; font-family: Arial; opacity: 1;" rows="12"></textarea>
+        <div class="grippie"></div>
+
+        <div class="statistics-container">
+        <h2>Live Statistics<span class="live-indicator" title="Statistics are updating live"></span></h2>
+        <p>Spaces and Enters are not counted.</p>
+        <div class="statistics">
+            <div class="stat-item">Words: <span id="wordCount">0</span></div>
+            <div class="stat-item">Sentences: <span id="sentenceCount">0</span></div>
+            <div class="stat-item">Characters: <span id="characterCount">0</span></div>
+            <div class="stat-item">Paragraphs: <span id="paragraphCount">0</span></div>
+        </div>
+        </div>
+        <div class="keyword-box">
+            <input type="text" id="keywordInput" class="keyword-input" placeholder="Enter keywords (max 3, separated by commas)...">
+            <button onclick="addKeywords()">Add Keywords</button>
+        </div>
+        <div class="keyword-list" id="keywordList"></div>
+        <div class="density-statistics">
+            <h2>Keyword Density 
+                <span class="keyword-density-info">
+                    <i class="fas fa-question-circle" id="speaking_time_tooltip"></i>
+                </span>
+            </h2>
+            <div class="keyword-density">
+                <div id="mainKeywordDensityDisplay"></div>
+                <div id="additionalKeywordDensities"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
