@@ -1,27 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f1e5;
-    color: #2e2e2e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container {
-    width: 90%;
-    margin: 4em 0;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #0b5345;
-}
-
 textarea {
     width: 100%;
     padding: 10px;
@@ -36,7 +12,7 @@ textarea {
 }
 
 .grippie {
-    background: #eee url(grippie.webp) no-repeat scroll center 2px;
+    background: #eee url(https://cdn.jsdelivr.net/gh/iammunendrasingh/Word-Counter-Online@main/grippie.webp) no-repeat scroll center 2px;
     border: 1px solid #ddd;
     border-width: 0 1px 1px;
     cursor: s-resize;
@@ -100,6 +76,7 @@ button {
 }
 
 button:hover {
+    color: #fff;
     background-color: #2e4375;
 }
 
