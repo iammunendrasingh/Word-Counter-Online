@@ -22,6 +22,7 @@ const keywordInput = document.getElementById("keywordInput");
 const keywordList = document.getElementById("keywordList");
 const textarea = document.getElementById("textArea");
 const grippie = document.querySelector(".grippie");
+const includeSpacesCheckbox = document.getElementById("includeSpacesCheckbox");
 
 let isDragging = false;
 
@@ -56,6 +57,10 @@ textArea.addEventListener("input", () => {
     updateStatistics();
     updateKeywordDensity();
     localStorage.setItem("savedText", textArea.value); // Save to localStorage
+});
+
+includeSpacesCheckbox.addEventListener("change", () => {
+    updateStatistics();
 });
 
 keywordInput.addEventListener("keydown", (e) => {
@@ -184,7 +189,8 @@ function updateStatistics() {
     const text = textArea.value;
     wordCount.textContent = text.trim() ? text.trim().split(/\s+/).length : 0;
     sentenceCount.textContent = text.split(/[.!?]+/).filter(Boolean).length;
-    characterCount.textContent = text.replace(/\s/g, "").length;
+    const includeSpaces = includeSpacesCheckbox.checked;
+    characterCount.textContent = includeSpaces ? text.length : text.replace(/\s/g, "").length;
     paragraphCount.textContent = text.split(/\n+/).filter(Boolean).length;
 
     // Update the word and character summary paragraph
@@ -198,7 +204,7 @@ function updateKeywordDensity() {
 
     if (keywords.length > 0) {
         keywords.forEach((keyword, index) => {
-            const occurrences = text.split(new RegExp(`\\b${keyword}\\b`, "gi")).length - 1;
+            const occurrences = text.split(new RegExp(`\b${keyword}\b`, "gi")).length - 1;
             const density = totalWords > 0 ? ((occurrences / totalWords) * 100).toFixed(2) : 0;
             if (index === 0) {
                 mainKeywordDensityDisplay.innerHTML = "";

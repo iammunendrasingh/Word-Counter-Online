@@ -31,10 +31,13 @@
         
         <textarea id="textArea" placeholder="Start typing, or copy and paste your document here..." class="form-control table-data finalResult textarea_revision processed" style="resize: none; overflow: hidden auto; height: 243px; min-height: 0px; font-family: Arial; opacity: 1;" rows="12"></textarea>
         <div class="grippie"></div>
-
+        <div class="checkbox-container">
+            <label><input type="checkbox" id="includeSpacesCheckbox"> Include spaces and line breaks in character count</label>
+            <p>Spaces and Enters are not counted by deafult, tick the checkbox above to include.</p>
+        </div>
+        
         <div class="statistics-container">
         <h2>Live Statistics<span class="live-indicator" title="Statistics are updating live"></span></h2>
-        <p>Spaces and Enters are not counted.</p>
         <div class="statistics">
             <div class="stat-item">Words: <span id="wordCount">0</span></div>
             <div class="stat-item">Sentences: <span id="sentenceCount">0</span></div>
